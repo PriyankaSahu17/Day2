@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -63,6 +63,166 @@
     </div>
   </main>
   <footer></footer>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oops! Page Not Found</title>
+  <style>
+    /* Reset & base */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #222;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 480px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      position: relative;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    /* Ghost SVG container */
+    .ghost-container {
+      width: 140px;
+      margin: 0 auto 1rem;
+      animation: float 3s ease-in-out infinite;
+      user-select: none;
+    }
+
+    /* The floating animation */
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Fade in animation for container */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+      color: #33475b;
+    }
+
+    p.message {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 0.8rem 1.6rem;
+      border: none;
+      background-color: #5c6bc0;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      box-shadow: 0 4px 10px rgba(92, 107, 192, 0.4);
+    }
+
+    .button:hover {
+      background-color: #3949ab;
+    }
+
+    .button.secondary {
+      background-color: #90a4ae;
+      box-shadow: 0 4px 10px rgba(144, 164, 174, 0.4);
+    }
+
+    .button.secondary:hover {
+      background-color: #78909c;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', () => {
+      if (document.referrer) {
+        const ref = new URL(document.referrer);
+        if (ref.origin === window.location.origin) {
+          const backBtn = document.createElement('button');
+          backBtn.textContent = 'Go Back';
+          backBtn.className = 'button secondary';
+          backBtn.title = 'Go back to previous page';
+          backBtn.onclick = () => window.history.back();
+          document.querySelector('.buttons').prepend(backBtn);
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="container" role="main" aria-labelledby="error-title" aria-describedby="error-desc">
+      <div class="ghost-container" aria-hidden="true">
+        <!-- Friendly ghost SVG -->
+        <svg viewBox="0 0 64 64" width="140" height="140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#fff" stroke="#5c6bc0" stroke-width="2" d="M32 2C16 2 10 15 10 29v22a3 3 0 0 0 6 0l3-4 3 4 3-4 3 4 3-4 3 4 3-4 3 4a3 3 0 0 0 6 0V29C54 15 48 2 32 2Z" />
+          <circle cx="22" cy="25" r="4" fill="#5c6bc0" />
+          <circle cx="42" cy="25" r="4" fill="#5c6bc0" />
+          <path stroke="#5c6bc0" stroke-width="2" d="M20 40c4 4 8 4 12 0" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h1 id="error-title">Oops! Page Not Found</h1>
+      <p class="message" id="error-desc">We can’t find the page you’re looking for. It might have been moved or deleted.</p>
+      <div class="buttons">
+        <a href="/" class="button" title="Go to homepage">Go Home</a>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
