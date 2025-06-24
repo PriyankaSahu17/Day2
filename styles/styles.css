@@ -211,10 +211,34 @@ button.secondary {
 }
 
 main img {
-  max-width: 100%;
+  max-width: 80%;
   width: auto;
   height: auto;
+  border-radius: 8px;               /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Soft shadow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth hover transitions */
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5)); /* subtle glow */
+  animation: floatUp 3s ease-in-out infinite alternate; /* gentle floating animation */
 }
+
+/* Hover effect: scale up and brighten shadow */
+main img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.8));
+}
+
+/* Keyframes for floating effect */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
 
 .icon {
   display: inline-block;
